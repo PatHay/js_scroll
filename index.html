@@ -32,9 +32,11 @@
 
 		function updateText()
 		{
-			el.innerHTML = el.innerHTML+words[word_counter][character_counter++];
-
-			if(character_counter == words[word_counter].length)
+			var nextChar = words[word_counter][character_counter++];
+			if(nextChar == " "){nextChar = "&nbsp;"}
+			el.innerHTML = el.innerHTML+nextChar;
+			
+			if(character_counter == words[word_counter].length+1)
 			{
 				word_counter++; 	//choose a different word
 				character_counter = 0;	//start over with the first character of the word
